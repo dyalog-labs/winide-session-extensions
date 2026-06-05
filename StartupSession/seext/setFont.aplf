@@ -1,0 +1,7 @@
+ setFont
+ :With ⎕SE.cbtop.bandtb5.tb
+     font.Text←'APL387 Unicode'
+     ⎕NQ font'Select'
+     size.Value←17
+     ⎕NQ size'Change'
+ :EndWith

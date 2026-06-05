@@ -1,0 +1,2 @@
+ extStatusBar
+ ⎕SE.cbbot.bandsb1.sb.(onDropFiles AcceptFiles)←'Get' 1

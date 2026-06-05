@@ -1,0 +1,3 @@
+ extToolsMenu
+ '⎕SE.mb.tools.sep1'⎕WC'Separator'
+ '⎕SE.mb.tools.aplcart'⎕WC'MenuItem' '&APLcart...'('Event'('Select' 'APLcart&'))('Hint' 'Open APLcart palette (Ctrl+Shift+A)')('Accelerator' 65 3)

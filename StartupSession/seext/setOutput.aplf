@@ -1,0 +1,3 @@
+setOutput
+⎕SE.UCMD'←box on -s=min -f=on -t=tree'
+⎕SE.UCMD'←rows on -s=long -fold=3'

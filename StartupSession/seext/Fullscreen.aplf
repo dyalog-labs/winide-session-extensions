@@ -1,0 +1,23 @@
+ FullScreen e;rem;add;old;GetWindowLong;SetWindowLong
+
+ ⎕NA'u user32|SetWindowLong* U I U'
+ :If 2≠⎕NC'⎕SE.Dyalog.preFullscreenSettings' ⍝ Go Full-screen
+     ⎕NA'u user32|GetWindowLong* U I'
+     old←GetWindowLong ⎕SE.Handle ¯16
+     rem←13303808   ⍝ WS_MAXIMIZEBOX:0x10000 ∨ WS_MINIMIZEBOX:0x20000 ∨ WS_SYSMENU:0x80000 ∨ WS_CAPTION:0xC00000
+     add←2147483648 ⍝ WS_POPUP:0x80000000
+     ⎕SE.Dyalog.preFullscreenSettings←⎕SE.(State Posn Size),SetWindowLong ⎕SE.Handle ¯16,add+2⊥rem<⍥{⍵⊤⍨32⍴2}old
+     ⎕SE.State←2 ⍝ and maximize
+     ⎕SE.(mb(cbtop cbbot).(⎕VGET'b'⎕NL ¯9)).Visible←0
+     {2 ⎕NQ ⎕SE'CloseSessionItem'⍵}¨'Editor' 'Debugger' 'LanguageBar'
+     FSNotify&3
+ :Else ⍝ Restore
+     {2 ⎕NQ ⎕SE'DockSessionItem'⍵}¨('Editor' '' 12 600 128)('Debugger' '' 9 300 128)('SIstack' 'Debugger' 12 300)('LanguageBar' '' 1 80)
+     ⎕SE.(mb(cbtop cbbot).(⍎¨'b'⎕NL ¯9)).Visible←1
+     {}SetWindowLong ⎕SE.Handle ¯16,⊢/⎕SE.Dyalog.preFullscreenSettings
+     ⎕SE.(State Posn Size)←3↑⎕SE.Dyalog.preFullscreenSettings
+     ⎕EX'⎕SE.Dyalog.preFullscreenSettings'
+     ⎕SE.cbtop.bandtb5.tb.size.(Thumb←Items⍳Value)
+     ⎕NQ ⎕SE'GotFocus'
+     ⎕EX'fsnote'
+ :EndIf

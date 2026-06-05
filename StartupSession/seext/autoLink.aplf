@@ -1,0 +1,8 @@
+ {msg}←autoLink;dir
+ :If ''≡⎕SE.Dyalog.Utils.Config'LOAD'
+ :AndIf (⊂⍕#)~⍤∊(⎕VGET⊂'⎕SE.Link.Links'(ns:0)).ns
+     dir←(⊃⌽4070⌶⍬),⊃'/YYYYMMDD.hhmmss'(1200⌶)1 ⎕DT'J'  ⍝ v20.0
+   ⍝ dir←(⊃⌽4070⌶⍬),⊃'/YYYYMMDD.hhmmss'⎕DT'J'           ⍝ v21.0
+     ⎕←msg←⎕SE.Link.Create # dir
+     ⎕WSID←dir,'/'
+ :EndIf
