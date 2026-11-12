@@ -1,8 +1,11 @@
- {msg}←autoLink;dir
- :If ''≡⎕SE.Dyalog.Utils.Config'LOAD'
+﻿ {msg}←autoLink
+⍝ If CLEAR WS, Link # to timestamped dir and set ⎕WSID
+ ;path;ds
+ :If ''≡⎕SYSTEM.Process.LaunchTarget
+ :AndIf 'CLEAR WS'≡⎕WSID
  :AndIf (⊂⍕#)~⍤∊(⎕VGET⊂'⎕SE.Link.Links'(ns:0)).ns
-     dir←(⊃⌽4070⌶⍬),⊃'/YYYYMMDD.hhmmss'(1200⌶)1 ⎕DT'J'  ⍝ v20.0
-   ⍝ dir←(⊃⌽4070⌶⍬),⊃'/YYYYMMDD.hhmmss'⎕DT'J'           ⍝ v21.0
-     ⎕←msg←⎕SE.Link.Create # dir
-     ⎕WSID←dir,'/'
+     ds←⎕SYSTEM.OS.DirectorySeparator
+     path←⎕SYSTEM.Directories.Temp,ds,⊃'YYYYMMDD.hhmmss'⎕DT'J'
+     ⎕←msg←⎕SE.Link.Create # path
+     ⎕WSID←path,ds
  :EndIf

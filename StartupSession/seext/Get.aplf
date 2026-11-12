@@ -1,4 +1,4 @@
- {msg}←Get(object event files item shift)
+﻿ {msg}←Get(object event files item shift)
  :If 9≠40 ⎕ATX'get'
      {}⎕SE.UCMD'Get ]get'
  :EndIf

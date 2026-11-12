@@ -1,28 +1,23 @@
- setFKeys;PF
- PF←{}⎕PFKEY⍨
+﻿ setFKeys
+⍝ Set various F-keys
+ ;PF
+ PF←{}⊆⍛⎕PFKEY⍨
 
- 4 PF'Ll' 'CT' '⍝' ' ' 'PT'   ⍝ Comment out
- 5 PF' ' 'DB'                 ⍝ Mark for execution  (F5)
- 6 PF'CP' 'JP' 'PT' 'ER' 'JP' ⍝ Run line in session (F6)
+ 5 PF' ' 'DB'                  ⍝ Mark for execution   F5
+ 6 PF'CP' 'JP' 'PT' 'ER' 'JP'  ⍝ Run selection in session  F6
 
- 13 PF')' 'LL' '(' 'RL'  ⍝ Parenthesise left Ctrl+0
- 14 PF']' 'LL' '[' 'RL'  ⍝ Bracket left      Ctrl+]
- 15 PF'}' 'LL' '{' 'RL'  ⍝ Brace left        Ctrl+}
+ 13 PF')' 'LL' '(' 'RL'  ⍝ Parenthesise left  Ctrl+0
+ 14 PF']' 'LL' '[' 'RL'  ⍝ Bracket left       Ctrl+]
+ 15 PF'}' 'LL' '{' 'RL'  ⍝ Brace left         Ctrl+}
 
- 16 PF'Ll' 'Rc' 'Rw' 'Lw' 'CT' 'Ll' 'DI' 'PT' ⍝ Uncomment Shift+F4
+ 10 PF'BP' 'RM' 'TC' 'BP'       ⍝ Trace to here    F10
+ 34 PF'BP' 'RM' 'TC' 'BP' 'TC'  ⍝ Trace into here  Ctrl+F10
 
+ 43 PF'OP' 'IL'       ⍝ Insert open line below  Ctrl+I
+ 44 PF'ER' 'BK' 'RL'  ⍝ Execute and recall      Alt+Enter
 
- 10 PF'BP' 'RM' 'TC' 'BP'                     ⍝ Trace to here   (F10)
- 34 PF'BP' 'RM' 'TC' 'BP' 'TC'                ⍝ Trace into here (Ctrl+F10)
+ 45 PF'BK'  ⍝ Ctrl+Z
+ 46 PF'FD'  ⍝ Ctrl+Y
 
- 43 PF'OP' 'IL'      ⍝ Insert open line below Ctrl+I
- 44 PF'ER' 'BK' 'RL' ⍝ Execute and recall Alt+Enter
-
- 45 PF⊂'BK' ⍝ Ctrl+Z
- 46 PF⊂'FD' ⍝ Ctrl+Y
-
- 37 PF'Ll' 'DI' ⍝ Delete all left Ctrl+Shift+BkSp
- 38 PF'Rl' 'DI' ⍝ Delete all right Ctrl+Shift+Del
-
- 47 PF'Lw' 'DI' ⍝ Delete word left Ctrl+BkSp
- 48 PF'Rw' 'DI' ⍝ Delete word right Ctrl+Del
+ 47 PF'Lw' 'DI'  ⍝ Delete word left   Ctrl+BkSp
+ 48 PF'Rw' 'DI'  ⍝ Delete word right  Ctrl+Del

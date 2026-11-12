@@ -1,3 +1,6 @@
-setOutput
-⎕SE.UCMD'←box on -s=min -f=on -t=tree'
-⎕SE.UCMD'←rows on -s=long -fold=3'
+﻿ setOutput
+⍝ Set ]Box and ]Rows
+ ⎕SE.UCMD¨(
+     '←OUTPUT.Box on -f=on -t=tree'
+     '←OUTPUT.Rows on -s=long -fold=3'
+ )

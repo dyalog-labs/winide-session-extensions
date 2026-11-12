@@ -1,4 +1,5 @@
- setFont
+﻿ setFont
+⍝ Set font face and size
  :With ⎕SE.cbtop.bandtb5.tb
      font.Text←'APL387 Unicode'
      ⎕NQ font'Select'

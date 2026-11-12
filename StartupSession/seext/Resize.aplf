@@ -1,10 +1,11 @@
- a Resize e;font;idx;new;⎕IO;sizes
- ⎕IO←1
+﻿ a Resize e
+⍝ Resize Session font
+ ;font;idx;new;sizes
  font←⎕SE ⎕WG'Font'
  sizes←⎕SE.cbtop.bandtb5.tb.size.Items
 
  idx←a+sizes⍸⍥{⌈⍵÷2}2⊃font
- new←sizes⊃⍨1+(≢sizes)|idx-1
+ new←sizes⊃⍨1⌈idx⌊≢sizes
 
  ⎕SE.cbtop.bandtb5.tb.size.(Value Thumb)←new idx
  ⎕NQ ⎕SE.cbtop.bandtb5.tb.size'Spin'idx

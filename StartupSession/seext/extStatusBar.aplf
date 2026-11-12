@@ -1,2 +1,3 @@
- extStatusBar
- ⎕SE.cbbot.bandsb1.sb.(onDropFiles AcceptFiles)←'Get' 1
+﻿ extStatusBar
+⍝ Extend Status bar to allow dropping files and folders
+ ⎕SE.cbbot.bandsb1.sb.(AcceptFiles onDropFiles)←1 'Get'

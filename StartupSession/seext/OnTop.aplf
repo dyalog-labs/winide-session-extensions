@@ -1,8 +1,0 @@
- {ok}←OnTop e;SetWindowPos
- ⎕NA'U user32|SetWindowPos U I U U U U U'
- :If ⎕SE.mb.view.ontop.Checked
-     ok←SetWindowPos ⎕SE.Handle ¯2 0 0 0 0 3 ⍝ NOT ontop
- :Else
-     ok←SetWindowPos ⎕SE.Handle ¯1 0 0 0 0 3 ⍝ ONTOP
- :EndIf
- ⎕SE.mb.view.ontop.Checked≠←1

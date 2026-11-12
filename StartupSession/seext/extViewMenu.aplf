@@ -1,16 +1,8 @@
- extViewMenu
- '⎕SE.mb.view.sep1'⎕WC'Separator'
- '⎕SE.tc'⎕WC'ToolControl' ⋄ ⎕SE.tc.Posn←¯32 0 ⍝ Container for invisible buttons so we can use the menu items when the menu bar is hidden
-
- '⎕SE.mb.view.ontop'⎕WC'MenuItem' '&Always on Top'('Event'('Select' 'OnTop'))('Hint' 'Keep session window in front of all other windows')('Style' 'Check')('Accelerator' 75 2)
-
- '⎕SE.mb.view.full'⎕WC'MenuItem' '&Full Screen'('Event'('Select' 'FullScreen&'))('Hint' 'Switch to full screen mode (F11 to toggle)')
- '⎕SE.tc.full'⎕WC'Button'('Event'('Select' 'FullScreen'))('Accelerator' 122 0)
-
- '⎕SE.mb.view.larger'⎕WC'MenuItem' 'Zoom &In'('Event'('Select' 'Resize' 1))('Hint' 'Make text larger (Ctrl+=)')
- '⎕SE.tc.larger'⎕WC'Button'('Event'('Select' 'Resize' 1))('Accelerator' 187 2) ⍝ Ctrl+[=]
-
- '⎕SE.mb.view.smaller'⎕WC'MenuItem' 'Zoom &Out'('Event'('Select' 'Resize' ¯1))('Hint' 'Make text smaller (Ctrl+-)')
- '⎕SE.tc.smaller'⎕WC'Button'('Event'('Select' 'Resize' ¯1))('Accelerator' 189 2) ⍝ Ctrl+[-]
-
- '⎕SE.tc.menu'⎕WC'Button'('Event'('Select' '⍎⎕SE.mb.Visible≠←1'))('Accelerator' 191 2) ⍝ Ctrl / (toggle menu bar visibility
+﻿ extViewMenu;ZC
+⍝ Extend View menu with Zoom items
+ ZC←{(⊃⍵)⎕WC'MenuItem'(2⊃⍵)('Event' ⋄ 'Select' 'Resize',3⊃⍵)('Hint' ⋄ 4⊃⍵)('Accelerator' ⋄ 5⊃⍵)}
+ '⎕SE.mb.view.sep'⎕WC'Separator'
+ ZC¨(
+     '⎕SE.mb.view.larger' 'Zoom &In' 1 'Make text larger (Ctrl+=)'(187 2)
+     '⎕SE.mb.view.smaller' 'Zoom &Out' ¯1 'Make text smaller (Ctrl+-)'(189 2)
+ )

@@ -1,2 +1,9 @@
- Run path
- ⍎¨(0=11∘⎕ATX)⍛/⎕A ⎕C⍛⎕NL ¯3
+﻿ Run args
+⍝ Call niladic fns with lowercase initial except mentioned in exclude.config
+ ;path;exclude
+ :If ⎕NEXISTS path←args⊃⍛,'/exclude.config'
+     exclude←⎕NGET path 1
+ :Else
+     exclude←0⍴⊂''
+ :EndIf
+ ⍎¨exclude~⍨{0=11 ⎕ATX ⍵}⍛/⎕A ⎕C⍛⎕NL ¯3
